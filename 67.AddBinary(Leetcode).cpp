@@ -13,6 +13,8 @@ string add(string a, string b){
         temp = temp + ((size_b>=0)? b[size_b]-'0': 0);
         cout<<"Temp+b: "<<temp + ((size_b>=0)? b[size_b]-'0': 0)<<endl;
         result = char(temp%2+'0')+ result;
+        cout<<"Char :"<<char(temp%2+'0')<<endl;
+        cout<<result<<endl;
         temp/=2;
         size_a--;
         size_b--;
