@@ -8,7 +8,7 @@ int main()
 
     for(int i=0; i<arr_size; i++)
     {
-        for(int j=0; j<arr_size-i; j++)
+        for(int j=0; j<arr_size-i-1; j++)
         {
             if(arr[j]>=arr[j+1]){
                 temp=arr[j+1];
