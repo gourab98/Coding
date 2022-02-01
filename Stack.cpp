@@ -1,5 +1,8 @@
-#define STACK_MAX 100
+#include<bits/stdc++.h>
+using namespace std;
 
+
+#define STACK_MAX 100
 typedef struct {
 
     int top;
