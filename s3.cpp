@@ -1,4 +1,4 @@
-/// 1+2+3+4+5+6+....+n
+/// 1+3+5+7+....+n
 
 #include<bits/stdc++.h>
 using namespace std;
@@ -10,7 +10,7 @@ if(n==1){
     return 1;
 }
 else {
-    return n+recursion(n-1);
+    return (n*2)-1+recursion(n-1);
 }
 
 }
@@ -19,7 +19,7 @@ long long int iteration()
 {
     for(int i=1;i<=n;i++)
     {
-        s+=i;
+        s=s+(i*2)-1;
     }
     return s;
 }
