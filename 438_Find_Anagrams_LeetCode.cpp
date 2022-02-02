@@ -1,3 +1,43 @@
+//Solution
+
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        
+        vector<int> g;
+        vector<int> arr(26,0);
+        vector<int> temp(26,0);
+        
+        int slen = s.size();
+        int plen = p.size();
+        
+        if(slen<plen){
+            return {};
+        }
+        
+        //First Window:
+        for(int i=0;i<plen;i++){
+            arr[p[i]-'a']++;
+            temp[s[i]-'a']++;
+        }
+        if(arr==temp){
+            g.push_back(0);
+        }
+        // Rest of the window
+        for(int i=plen;i<slen;i++){
+            temp[s[i-plen]-'a']--;
+            temp[s[i]-'a']++;
+            
+            if(arr==temp){
+                g.push_back(i-plen+1);
+            }
+        }
+        
+        return g;
+    }
+};
+
+
 // But it got time limit exceeded.
 
 #include<bits/stdc++.h>

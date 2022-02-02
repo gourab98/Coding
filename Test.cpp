@@ -4,26 +4,36 @@ int main()
 {
     string s;
     string p;
-    string n;
-    int pSize;
-    int sSize;
-    vector <int> g;
-    cout<<"Enter the string of S: ";
     cin>>s;
-    cout<<"Enter the string of P: ";
     cin>>p;
-    pSize=p.size();
-    sSize=s.size();
-    n = s.substr(1,pSize);
-    cout<<n<<endl;
-    cout<<sSize<<" "<<pSize<<endl;
-     sort(p.begin(),p.end());
-        for(int i=0;i<s.size();i++){
-            n = s.substr(i, pSize);
-            sort(n.begin(),n.end());
-            if(n==p){
-                g.push_back(i);
-            }   
-        }
-    cout<<g.size()<<endl;
+    vector <int> g;
+    int arr[26] = {0};
+    int temp[26] = {0};
+
+    int slength = s.length();
+    int plength = p.length();
+    if(slength < plength)
+    {
+        cout<<"No anagrams"<<endl;
+        return 0;
+    }
+    //First Window
+    for(int i=0;i<plength;i++){
+        arr[p[i]-'a']++;
+        temp[s[i]-'a']++;
+    }
+    if(arr==temp)
+        g.push_back(0);
+
+    //Rest of the windows
+    for(int i=plength;i<slength;i++){
+        temp[s[i-plength]-'a']--;
+        temp[s[i]-'a']++;
+
+        if(arr==temp)
+            g.push_back(i-plength+1);
+    }   
+    for(int i=0;i<g.size();i++)
+        cout<<g[i]<<" ";
+
 }
