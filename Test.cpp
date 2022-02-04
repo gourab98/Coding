@@ -1,33 +1,38 @@
-// Tree traversal in BFS in C++
-
 #include<bits/stdc++.h>
 using namespace std;
 int main()
 {
-    int n;
-    cout<<"Enter the number of nodes: ";
-    cin>>n;
-    int arr[n];
-    cout<<"Enter the elements: ";
-    for(int i=0;i<n;i++)
+    unordered_map<int, int> mp;
+    int arr[2]={1,2};
+    int arr1[2]={-2,-1};
+    int arr2[2]={-1,2};
+    int arr3[2]={0,2};
+
+    for(int i=0;i<2;i++)
     {
-        cin>>arr[i];
-    }
-    int root = arr[0];
-    queue<int> q;
-    q.push(root);
-    while(!q.empty())
-    {
-        int temp = q.front();
-        cout<<temp<<" ";
-        q.pop();
-        for(int i=0;i<n;i++)
-        {
-            if(arr[i]==temp)
-            {
-                q.push(arr[i]);
-            }
+        for(int j=0;j<2;j++){
+            int sum = arr[i]+arr1[j];
+            mp[sum]++;
+            //cout<<mp[sum]++<<endl; 
         }
+    }
+        cout<<" GO"<<endl;
+    for(auto it=mp.begin();it!=mp.end();it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
+    }
+
+    for(int i=0;i<2;i++)
+    {
+        for(int j=0;j<2;j++){
+            int sum =(-1)*(arr2[i]+arr3[j]);
+            cout<<mp[sum]<<endl;
+        }
+    }
+    cout<<" GO"<<endl;
+    for(auto it=mp.begin();it!=mp.end();it++)
+    {
+        cout<<it->first<<" "<<it->second<<endl;
     }
     
 }
