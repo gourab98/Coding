@@ -10,6 +10,7 @@ int main()
     while(test--)
     {
         cin>>a>>b>>k;
+        
         div = k/2;
         mo = k%2;
         ans = a*(div+mo) - b*div;
