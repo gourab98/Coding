@@ -1,38 +1,25 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    vector<int> nums={1,1,1,2,2};
-    int k;
-    int input;
-
-    // while(cin>>input){
-    //     nums.push_back(input);
-    // }
-
-    cin>>k;
-    sort(nums.begin(), nums.end());
-    unordered_map<int, int> m;
-    unordered_map<int, int> n;
-    for(int i=0;i<nums.size();i++){
-            m[nums[i]]++;
-            n[nums[i]]=0;
-        }
-
-    int coun=0;
-    for(int i=0;i<nums.size();i++){
-        for(int j=i;j<nums.size();j++){
-            if(abs(nums[i]-nums[j])==k && m[nums[j]]!=0 && i!=j && n[nums[i]]<2){
-                cout<<"("<<nums[i]<<","<<nums[j]<<")"<<endl;
-                m[nums[j]]--;
-                n[nums[i]]++;
-                n[nums[j]]++;
-                
-                coun++;
-               
+class Solution {
+public:
+    int findPairs(vector<int>& nums, int k) {
+         
+        int n = nums.size();
+        int count = 0;
+        
+        sort(nums.begin(),nums.end());
+        map<pair<int,int>,int> mp;
+        
+        for(int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(abs(nums[j]-nums[i]==k)){
+                    pair<int,int> p ={nums[i],nums[j]};
+                    if(mp.find(p)==mp.end()){
+                        count++;
+                        mp[p]=1;
+                    }
+                }
             }
         }
+        
+        return count;
     }
-
-    cout<<coun<<endl;
-}
+};
