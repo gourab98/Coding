@@ -2,31 +2,34 @@
 using namespace std;
 int main()
 {
-    vector<int> nums={1,1,1,2,2};
-    int k;
-    int input;
+   string s1,s2;
+   cin>>s1>>s2;
 
-    // while(cin>>input){
-    //     nums.push_back(input);
-    // }
- 
-    cin>>k;
-    sort(nums.begin(), nums.end());
-    map<pair<int,int>,int> mp;
-    int count = 0;
-
-    for(int i=0;i<nums.size();i++){
-        for(int j=i+1;k<nums.size();j++){
-            if(abs(nums[i]-nums[j])==k){
-                pair<int,int> p ={nums[i],nums[j]};
-                if(mp.find(p)==mp.end()){
-                    count++;
-                    cout<<nums[i]<<" "<<nums[j]<<endl;
-                    mp[p]=1;
-                }
-            }
+          map<char,int> mp1,mp2;
+        for(int i=0;i<s1.size();i++){
+            mp1[s1[i]]++;
         }
+        for(int i=0;i<s1.size();i++){
+            mp2[s2[i]]++;
+        }
+        if(mp1==mp2){
+            return true;
+        }
+        
+        for(int j=0,i=s1.size()-1;j<s2.size()-s1.size();j++){
+            mp2[s2[j]]--;
+            mp2[s2[i++]]++;
+             for(auto z=mp2.begin();z!=mp2.end();z++){
+        cout<<z->first<<" "<<z->second<<endl;
+     }
+     cout<<"Next: "<<endl;
+            if(mp1==mp2){
+            cout<<"true";
+        } 
+      }
+        cout<<"false";
+
+    for(auto i=mp1.begin();i!=mp1.end();i++){
+        cout<<i->first<<" "<<i->second<<endl;
     }
-    
-    cout<<count<<endl;
 }

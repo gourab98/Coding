@@ -4,6 +4,7 @@
         "ostream": "cpp",
         "iostream": "cpp",
         "vector": "cpp",
-        "xmemory": "cpp"
+        "xmemory": "cpp",
+        "algorithm": "cpp"
     }
 }
