@@ -2,13 +2,13 @@
 using namespace std;
 int main()
 {
-    int a;
-    float b; 
-    double c;
-    //cin>>b;
-    //cin>>c;
-    cout<<sqrt(b)<<endl;
-    cout<<sqrt(c)<<endl;
-    cout<<acos(-1)<<endl;
-
+    int con;
+    //cin>>con;
+    // vector<int> vec(con+1,0);
+    // for(int i=0;i<vec.size();i++){
+    //     cout<<(i&(i-1))<<endl;
+    // }
+    int t=5~3;
+    cout<<t;
+    
 }

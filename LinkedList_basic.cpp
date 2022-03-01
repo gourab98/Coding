@@ -6,6 +6,7 @@ struct Node{
 int data;
 Node *link;
 };
+
 Node *head = NULL; ///Global
 
 /// Creation of a link list
