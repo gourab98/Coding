@@ -4,10 +4,13 @@ int main()
 {
     int n;
     cin>>n;
+    int t;
     vector<int> vec(n+1,0);
-    for(int i=0;i<vec.size();i++){
+    for(int i=1;i<vec.size();i++){
         vec[i] = 1 + vec[i&(i-1)];
-        cout<<vec[i]<<endl;
+        t = i&(i-1);
+        
+        cout<<i<<" "<<t<<" "<<vec[i]<<endl;
     }
     
 }
