@@ -1,8 +1,8 @@
 class Solution {
 public:
     bool isUgly(int n) {
-        if(n==0) return false;
-        while(n>1 || n<1)
+        if(n<=0) return false;
+        while(n>1)
         {
                 if(n%2==0){
                     n=n/2;
