@@ -1,10 +1,8 @@
-#include<bits/stdc++.h>
-using namespace std;
-int main()
-{
-    int n;
-    cin>>n;
-     while(n>1)
+class Solution {
+public:
+    bool isUgly(int n) {
+        if(n==0) return false;
+        while(n>1 || n<1)
         {
                 if(n%2==0){
                     n=n/2;
@@ -16,12 +14,11 @@ int main()
                      n=n/5;                    
                 }
                 else{
-                    cout<<"NOT The End"<<endl;
-                    break;
+                    return false;
                 }
+            
         }
         
-        cout<<"The end:"<<n<<endl;
-    
-    
-}
+        return true;
+    }
+};
