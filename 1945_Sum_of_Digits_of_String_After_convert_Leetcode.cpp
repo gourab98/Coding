@@ -39,3 +39,26 @@ int main()
     cout<<answer;
 
 }
+
+
+class Solution {
+public:
+    int getLucky(string a, int n) {
+    string num = "";
+    int ans=0;
+    for(int i=0;i<a.size();i++){
+        ans = a[i] - 'a' + 1;                // We can also write ans = a[i] - 96   
+        num = num + to_string(ans);
+    }
+    while(n--){
+        ans = 0;
+        for(int i=0;i<num.size();i++){
+            ans = ans + (num[i]-'0');        // We can also write ans = ans + (num[i] - 48) 
+        }
+        num = to_string(ans);
+    }
+      return ans;
+    }
+    
+    
+};
