@@ -3,24 +3,27 @@ using namespace std;
 
 int main()
 {
-    vector<int> vec;
-    vector<int> ans;
-    int input;
-    while(cin>>input){
-          vec.push_back(input);
-    }   
-    for(int i=0;i<vec.size();i++){
-        if(i%2==0){
-            ans.push_back(vec[i]);
-        }
+    string s = "A man, a plan, a canal: Panama";
+    stack<int> st;
+    queue<int> qu;
+    for(int i=0;i<s.size();i++){
+        int a = s[i];
+        if((65<= a && a <=90) || (97<=a && a<=122) ){
+            if(65<= a && a <=90) a=a+32;
+            st.push(a);
+            qu.push(a);
+        } 
     }
-    for(int i=0;i<vec.size();i++){
-        if(i%2==1){
-            ans.push_back(vec[i]);
-        }
+    cout<<"The size s "<<s.size() <<endl;
+    cout<<"The size st "<<st.size() <<endl;
+    cout<<"The size qu "<<qu.size() <<endl;
+
+    for(int i=0;i<st.size();i++){
+        cout<<st.top()<<" ";
+        cout<<qu.front()<<" "<<endl;
+        st.pop();
+        qu.pop();
     }
-    for(int i=0;i<ans.size();i++){
-        cout<<ans[i]<<" ";
-    }
-  
+
+
 }  
