@@ -3,15 +3,24 @@ using namespace std;
 
 int main()
 {
-    int num;
-    cin>>num;
-    int i=2;
-    while(num!=1){
-       if(num%i==0){
-           num = num / i;
-           cout<<i<<" ";
-       }
-       else i++;
-    }
+    int p;
+   queue<int> qu;
+   for(int i=0;i<5;i++){
+       cin>>p;
+       qu.push(p);
+   }
+   cout<<qu.front()<<" ";
+
+   cout<<qu.back()<<" ";
+
+   qu.pop();
+   qu.pop();
+   cout<<"The size "<<qu.size()<<endl;
+    for(int i=0;i<5;i++){
+       cout<<" "<<qu.front()<<" ";
+   }
+
     
 }  
+
+
