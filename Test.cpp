@@ -9,9 +9,8 @@ int main()
        cin>>p;
        qu.push(p);
    }
-   cout<<qu.front()<<" ";
-
-   cout<<qu.back()<<" ";
+   cout<<qu.front()<<"  ";
+   cout<<qu.back()<<"  ";
 
    qu.pop();
    qu.pop();
