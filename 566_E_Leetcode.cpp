@@ -3,7 +3,7 @@ public:
     vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
      
         int n = mat.size();
-        int m = mat.size();
+        int m = mat[0].size();
         
         vector<vector<int>> ans(r, vector<int>(c));
         
