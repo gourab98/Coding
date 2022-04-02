@@ -6,6 +6,7 @@
         "vector": "cpp",
         "xmemory": "cpp",
         "algorithm": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "xutility": "cpp"
     }
 }
