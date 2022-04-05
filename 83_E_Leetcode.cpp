@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
         if(head==NULL || head->next == NULL) return head;
-        ListNode* ans = new ListNode(0);
+        ListNode* ans = new ListNode(-10000);
         ListNode* curr = ans;
         ListNode* p = head;
         while(p!=NULL && p->next!=NULL){
