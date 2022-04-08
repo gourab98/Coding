@@ -13,7 +13,7 @@ public:
             b = pq.top();
             pq.pop();
             if(a-b>0){
-                pq.push(a-b);
+                pq.push(a-b); 
             }
         }
         if(pq.size()==1) return pq.top();
