@@ -11,7 +11,7 @@ public:
         for(auto i: smap){
             v.push_back(i);
         }
-        sort(v.begin(),v.end(),[](pair<char,int> a, pair<char,int> b){
+        sort(v.begin(),v.end(),[](pair<char,int> a, pair<char,int> b){ 
             return a.second>b.second;
         });
         int cou = 0;
