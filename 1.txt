@@ -1,3 +1,0 @@
-The type of problems:
-
-LinkList, String, Math,  

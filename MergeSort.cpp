@@ -1,29 +1,63 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void merge(int arr[],int begin, int mid, int end){
-    int n1 = mid - begin +1;
-    int n2 = end - mid;
-}
+void merge(int arr[],int l,int mid,int r){
+    int n1= mid-l+1;
+    int n2= r-mid;
 
-void mergeSort(int arr[],int l,int h){
-    if(l>=h)
-        return;
+    // temporary array
+    int a[n1];
+    int b[n2]; 
 
-    if(l<h){
-        int mid =(l+h)/2;
-        mergeSort(arr,l,mid);
-        mergeSort(arr,mid+1,h);
-        merge(arr,l,mid,h);
-    }    
-}
-int main()
-{
-    int arr[]={12,11,13,5,6,7,43,81,9,10,4};
-    int n = sizeof(arr)/sizeof(arr[0]);
-    //mergeSort(arr,0,n-1);
-    for(auto each:arr)
-    {
-        cout<<each<<" ";
+    for(int i=0;i<n1;i++){
+        a[i]=arr[l+i];
     }
+    for(int j=0;j<n2;j++){
+        b[j]=arr[mid+1+j];
+    }
+
+    int i=0;
+    int j=0;
+    int k=l;
+    while(i<n1 && j<n2){
+        if(a[i]<b[j]){
+            arr[k]=a[i];
+            k++;
+            i++;
+        }
+        else{
+            arr[k]=b[j];
+            k++;
+            j++;
+        }
+    }
+    while(i<n1){
+            arr[k]=a[i];
+            k++;
+            i++;
+    }
+    while(j<n2){
+            arr[k]=b[j];
+            k++;
+            j++;
+    }
+}
+
+void mergeSort(int arr[], int l,int r){
+    if(l<r){
+        int mid = (l+r)/2;
+        mergeSort(arr,l,mid);
+        mergeSort(arr,mid+1,r);
+
+        merge(arr,l,mid,r);
+    }
+}
+
+int main(){
+    int arr[]={80,3,9,7,5,23,767,2,4,7,87};
+    mergeSort(arr,0,10);
+    for(int i=0;i<11;i++){
+        cout<<arr[i]<<" ";
+    }
+    return 0;
 }
