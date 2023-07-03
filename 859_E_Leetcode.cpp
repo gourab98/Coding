@@ -2,14 +2,14 @@ class Solution {
 public:
     bool buddyStrings(string s, string goal) {
         if(s.size()!=goal.size() || s.size()==1) return false;
-        int a = 1;
+        int a = 0;
         for(int i=0;i<goal.size();i++){
             if(s[i]!=goal[i]){
                 a=i;
                 break;
             }
         }
-        if(a==1){
+        if(s==goal){
         for(int i=0;i<s.size()-1;i++){
             if(s[i]==s[i+1]){
                 a=i+1;
