@@ -2,8 +2,10 @@
 using namespace std;
 int main()
 {
-    for(int i=0;i<499;i++)
+    int x;
+    cin>>x;
+    for(int i=1;i<=100;i++)
     {
-        cout<<"!"<<endl;
+        cout<<x<<" x "<<i<<" = "<<i*x<<endl;
     }
 }
