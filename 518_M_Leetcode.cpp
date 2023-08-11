@@ -11,6 +11,9 @@ public:
         if(t[start][amount]!=-1){
             return t[start][amount];
         }
+        if(coins[start]>amount){
+            return t[start][amount] = solve(start+1,amount, coins);
+        }
         int take = solve(start,amount-coins[start],coins);
         int skip = solve(start+1,amount,coins);
         
