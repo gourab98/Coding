@@ -5,7 +5,7 @@ public:
     int t[101][101];
     int solve(int i, int j,vector<vector<int>>& obstacleGrid){
         
-        if(i>m || i<0 || j>n || j<0 || obstacleGrid[i][j]==1){
+        if(i>m || j>n || obstacleGrid[i][j]==1){
             return 0;
         }
         if(t[i][j]!=-1){
